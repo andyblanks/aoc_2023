@@ -28,3 +28,8 @@ add_test(NAME Example2 COMMAND ${PROJECT_NAME} ${PROJECT_SOURCE_DIR}/input_examp
 set_tests_properties(Example2
     PROPERTIES PASS_REGULAR_EXPRESSION "Steps required to escape wasteland: 6"
 )
+
+add_test(NAME Example3 COMMAND ${PROJECT_NAME} ${PROJECT_SOURCE_DIR}/input_example_3.txt)
+set_tests_properties(Example3
+    PROPERTIES PASS_REGULAR_EXPRESSION "Steps required to escape wasteland: 6"
+)
