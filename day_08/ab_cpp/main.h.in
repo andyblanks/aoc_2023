@@ -1,0 +1,7 @@
+#ifndef MAIN_H
+#define MAIN_H
+
+#define WASTELAND_ESCAPER_VERSION_MAJOR @WastelandEscaper_VERSION_MAJOR@
+#define WASTELAND_ESCAPER_VERSION_MINOR @WastelandEscaper_VERSION_MINOR@
+
+#endif // MAIN_H
