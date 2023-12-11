@@ -10,6 +10,7 @@ class WastelandNavigator
 {
     std::vector<char> sequence;
     std::map<std::string, std::array<std::string, 2>> network;
+    std::vector<std::string> start;
 
     std::vector<char>::const_iterator direction;
     std::string node;
@@ -19,7 +20,7 @@ class WastelandNavigator
 public:
     WastelandNavigator(const char *);
 
-    int Navigate(const std::string &);
+    int Navigate();
 };
 
 #endif // WASTELAND_NAVIGATOR_HPP

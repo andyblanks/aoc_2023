@@ -21,20 +21,44 @@ WastelandNavigator::WastelandNavigator(const char *input)
             continue;
         }
 
-        network[line.substr(0, 3)] = {line.substr(7, 3), line.substr(12, 3)};
+        auto node = line.substr(0, 3);
+        network[node] = {line.substr(7, 3), line.substr(12, 3)};
+        if (node.back() == 'A')
+        {
+            start.push_back(node);
+        }
     }
 }
 
-int WastelandNavigator::Navigate(const std::string &destination)
+int WastelandNavigator::Navigate()
 {
-    std::string node = "AAA";
+    std::vector<std::string> nodes = start;
     auto direction = sequence.begin();
 
     auto steps = 0;
 
-    while (node != destination)
+    while (true)
     {
-        node = network[node][*direction];
+        auto done = true;
+
+        for (auto it = nodes.begin(); it != nodes.end(); it++)
+        {
+            if (it->back() != 'Z')
+            {
+                done = false;
+                break;
+            }
+        }
+
+        if (done)
+        {
+            return steps;
+        }
+
+        for (auto it = nodes.begin(); it != nodes.end(); it++)
+        {
+            *it = network[*it][*direction];
+        }
 
         direction++;
         if (direction == sequence.end())
@@ -44,6 +68,4 @@ int WastelandNavigator::Navigate(const std::string &destination)
 
         steps++;
     }
-
-    return steps;
 }

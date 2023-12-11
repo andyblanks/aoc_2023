@@ -19,5 +19,5 @@ int main(int argc, char **argv)
     WastelandNavigator wasteland_navigator(argv[1]);
 
     std::cout << "Steps required to escape wasteland: "
-              << wasteland_navigator.Navigate("ZZZ") << std::endl;
+              << wasteland_navigator.Navigate() << std::endl;
 }
